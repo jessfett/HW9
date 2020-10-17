@@ -9,7 +9,7 @@ The assignment consisted of analyzing the remaining employee database for Pewlet
 2. Data Analysis
 
 
-I analyzed the remaining CSV files and created a relationship database, which can be found in the [Data Folder](https://github.com/jessfett/HW9/tree/master/data). After that, the tables were created in an SQL file using PGAdmin4 and analyzed for the required questions. 
+I analyzed the remaining CSV files and created a relationship database, which can be found in the [ERD Folder](https://github.com/jessfett/HW9/tree/master/ERD). After that, the tables were created in an SQL file using PGAdmin4 and analyzed for the required questions. 
 
 ## Data Modeling/Data Engineering
 
@@ -19,14 +19,14 @@ First task was to create an ERD in QuickDBD.
 
 The tables were created in PGAdmin4. After inspecting the CSV files and creating an ERD, the proper Primary Keys and Foreign Keys were utilized to create tables that were able to be analyzed. 
 
-'''--Drop if existing
-DROP TABLE IF EXISTS departments;
-DROP TABLE IF EXISTS dept_emp;
-DROP TABLE IF EXISTS dept_manager;
-DROP TABLE IF EXISTS employees;
-DROP TABLE IF EXISTS salaries;
-DROP TABLE IF EXISTS titles; 
-
+```
+--Drop if existing
+DROP TABLE IF EXISTS departments CASCADE;
+DROP TABLE IF EXISTS dept_emp CASCADE;
+DROP TABLE IF EXISTS dept_manager CASCADE;
+DROP TABLE IF EXISTS employees CASCADE;
+DROP TABLE IF EXISTS salaries CASCADE;
+DROP TABLE IF EXISTS titles CASCADE;
 
 --Create neccessary tables
 CREATE TABLE "departments" (
@@ -36,7 +36,6 @@ CREATE TABLE "departments" (
 	"dept_no"));
 	
 SELECT * FROM departments;
-
 
 CREATE TABLE "dept_emp" (
 	"emp_no" INT NOT NULL,
@@ -73,8 +72,8 @@ CREATE TABLE "titles" (
 	"title_id" VARCHAR NOT NULL,
 	"title" VARCHAR NOT NULL);
 	
-SELECT * FROM titles;	
-	'''
+SELECT * FROM titles;
+```
 
 #### Data Engineering
 
